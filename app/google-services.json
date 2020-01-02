@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "975733955047",
+    "firebase_url": "https://receta-cocina.firebaseio.com",
+    "project_id": "receta-cocina",
+    "storage_bucket": "receta-cocina.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975733955047:android:d0f1b4f3151379f07f4542",
+        "android_client_info": {
+          "package_name": "mx.edu.uacm.recetas_cocina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975733955047-02skq8ua6nj6mefr4t400rggduk444uu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK0s7AKoHSXpY9-_tOue7okwk1Pdq3HDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975733955047-02skq8ua6nj6mefr4t400rggduk444uu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

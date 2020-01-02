@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         nombreUsuario=(EditText)findViewById(R.id.txtUsuario);
         contraseña=(EditText) findViewById(R.id.txtPass);
         btnRegistrar=(Button) findViewById(R.id.btnRegsitrar);
+        firebaseAuth=FirebaseAuth.getInstance();
 
 
 
