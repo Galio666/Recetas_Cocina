@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Recetas_Cocina</string>
+    <string name="facebook_application_id" translatable="false">861409667648898</string>
+    <string name="facebook_login" translatable="false">fb861409667648898</string>
 </resources>
