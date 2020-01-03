@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 new AuthUI.IdpConfig.FacebookBuilder().build()
 
         );
+        mostrarOpcionesRegistro();
     }
 
     public void mostrarOpcionesRegistro(){
