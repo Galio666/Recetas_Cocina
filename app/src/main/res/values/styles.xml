@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -11,5 +11,9 @@
     <style name="RegistroTema"  parent="AppTheme">
         <item name="android:windowBackground">@android:color/white</item>
     </style>
+
+    <drawable name="R_COCINA">
+        <item android:drawable="@drawable/r_cocina" android:duration="200"/>
+    </drawable>
 
 </resources>

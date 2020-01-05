@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "975733955047-stqjcg6i8u700tb1jvq0mg47jtgnao2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mx.edu.uacm.recetas_cocina",
+            "certificate_hash": "60ce71637eee623a505516d102ebc310823aa6bc"
+          }
+        },
+        {
           "client_id": "975733955047-02skq8ua6nj6mefr4t400rggduk444uu.apps.googleusercontent.com",
           "client_type": 3
         }
