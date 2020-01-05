@@ -33,9 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         opcionesregistro= Arrays.asList(
-                new AuthUI.IdpConfig.EmailBuilder().build(),
-                new AuthUI.IdpConfig.GoogleBuilder().build(),
-                new AuthUI.IdpConfig.FacebookBuilder().build()
+                new AuthUI.IdpConfig.EmailBuilder().build()
+
 
         );
         mostrarOpcionesRegistro();
