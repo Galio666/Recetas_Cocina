@@ -11,11 +11,13 @@
     </style>
 
     <style name="RegistroTema"  parent="AppTheme">
-        <item name="android:windowBackground">@android:color/white</item>
+
+            <item name="android:windowBackground">@drawable/fondo</item>
+
     </style>
 
     <drawable name="R_COCINA">
-        <item android:drawable="@drawable/r_cocina" android:duration="200"/>
+        <item android:drawable="@drawable/r_cocina"/>
     </drawable>
 
 
