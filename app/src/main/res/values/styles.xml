@@ -10,16 +10,24 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="RegistroTema"  parent="AppTheme">
+    <style name="RegistroTema" parent="AppTheme">
 
-            <item name="android:windowBackground">@drawable/fondo</item>
+        <item name="android:windowBackground">@drawable/fondo</item>
 
     </style>
 
     <drawable name="R_COCINA">
-        <item android:drawable="@drawable/r_cocina"/>
+        <item android:drawable="@drawable/r_cocina" />
     </drawable>
 
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>
