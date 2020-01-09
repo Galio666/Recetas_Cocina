@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         opcionesregistro= Arrays.asList(
                 new AuthUI.IdpConfig.EmailBuilder().build(),
                 new AuthUI.IdpConfig.GoogleBuilder().build()
@@ -41,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
     }
+
+
+    //Metodo del boton flotante
+    public void Flotante(View view){
+
+        Intent int1 = new Intent(this,AgregarRecetas.class);
+        startActivity(int1);
+    }
+
 
     public void mostrarOpcionesRegistro(){
         startActivityForResult(

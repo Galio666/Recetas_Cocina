@@ -2,6 +2,22 @@
     <string name="app_name">Recetas_Cocina</string>
     <string name="facebook_application_id">861409667648898</string>
     <string name="fb_login_protocol_scheme">fb861409667648898</string>
-    
+    <string name="title_activity_agregar_recetas">AgregarRecetas</string>
+    <string name="nombre_receta">Nombre</string>
+    <string name="calificacion_receta">Calificacion</string>
+    <string name="dificultad_receta">Dificultad</string>
+    <string name="ingredientes_receta">Ingredientes</string>
+    <string name="categoria_receta">Categoria</string>
+    <string name="favorito_receta">Favorito</string>
+    <string name="preparacion_receta">Preparacion</string>
+    <string name="btn_agregar">Agregar</string>
+    <string-array name="categorias">
+        <item>Entrada</item>
+        <item>Sopa</item>
+        <item>Plato Fuerte</item>
+        <item>Postres</item>
+    </string-array>
+
+
 
 </resources>
