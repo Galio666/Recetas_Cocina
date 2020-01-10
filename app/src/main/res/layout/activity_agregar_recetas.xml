@@ -43,8 +43,8 @@
 
     <TextView
         android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="123dp"
+        android:layout_height="59dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="29dp"
@@ -57,8 +57,8 @@
 
     <TextView
         android:id="@+id/editText3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="121dp"
+        android:layout_height="47dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="38dp"
@@ -147,6 +147,7 @@
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toTopOf="@+id/editText" />
 
+
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="0dp"
@@ -158,6 +159,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText3"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/btn_agregar"
