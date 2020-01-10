@@ -60,8 +60,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/dificultad_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/ed7"
@@ -74,7 +74,8 @@
         android:id="@+id/editText4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="6dp"
         android:text="@string/ingredientes_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toBottomOf="@+id/edt_ingredientes"
@@ -82,12 +83,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/edt_ingredientes" />
 
+
     <TextView
         android:id="@+id/editText7"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="4dp"
         android:text="@string/preparacion_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toBottomOf="@+id/edt_preparacion"
@@ -99,9 +101,9 @@
         android:id="@+id/ed7"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="18dp"
         android:text="@string/categoria_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/edt_ingredientes"
@@ -109,55 +111,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
+
     <EditText
         android:id="@+id/edt_ingredientes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="13dp"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/edt_preparacion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText4"
         app:layout_constraintTop_toBottomOf="@+id/ed7" />
 
-
     <EditText
         android:id="@+id/edt_preparacion"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="4dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/btn_agregar"
+        app:layout_constraintBottom_toTopOf="@+id/imagenRec"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText7"
         app:layout_constraintTop_toBottomOf="@+id/edt_ingredientes" />
 
-
     <EditText
         android:id="@+id/edt_nombre"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="71dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="78dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/editText" />
+        app:layout_constraintTop_toTopOf="@+id/my_toolbar" />
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="0dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="178dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="179dp"
-        app:layout_constraintBottom_toBottomOf="@+id/edt_ingredientes"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/editText3" />
 
     <Button
         android:id="@+id/btn_agregar"
@@ -169,13 +167,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_preparacion" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_galeria" />
 
     <Spinner
         android:id="@+id/menuCat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="14dp"
+        android:layout_marginEnd="8dp"
         android:prompt="@string/tituloCat"
         android:scrollbarSize="75px"
         android:spinnerMode="dialog"
@@ -192,6 +190,25 @@
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_galeria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Foto"
+        app:layout_constraintBottom_toTopOf="@+id/btn_agregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenRec" />
+
+    <ImageView
+        android:id="@+id/imagenRec"
+        android:layout_width="188dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="97dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt_galeria"
+        app:layout_constraintEnd_toEndOf="@+id/bt_galeria"
+        app:layout_constraintTop_toBottomOf="@+id/edt_preparacion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

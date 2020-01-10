@@ -1,9 +1,15 @@
 package mx.edu.uacm.recetas_cocina;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
@@ -20,6 +26,8 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,10 +35,13 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
     //referencia a la base de datos del nodo principal
     DatabaseReference mRootReference;
-    Button btnSubirDatosFirebase;
+    Button btnSubirDatosFirebase,galeria;
     EditText etNombre,varSpin,etIngredientes,etPreparacion;
     Spinner spin;
     RatingBar ratingBar;
+    ImageView imagen;
+    static final int GALLERI_INTENT = 1;
+    private Bitmap bitmap;
 
 
 
@@ -51,8 +62,17 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         ratingBar = (RatingBar)findViewById(R.id.ratingBar);
         etIngredientes = (EditText)findViewById(R.id.edt_ingredientes);
         etPreparacion = (EditText)findViewById(R.id.edt_preparacion);
+        imagen = (ImageView)findViewById(R.id.imagenRec);
+        galeria=(Button)findViewById(R.id.bt_galeria);
 
+      /***Boton de la galeria***/
 
+      galeria.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              cargarImagen();
+          }
+      });
 
 
 
@@ -66,7 +86,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
                 Float calificacion = ratingBar.getRating();
                 String ingredientes = etIngredientes.getText().toString();
                 String preparacion = etPreparacion.getText().toString();
-
+                String foto = getStringImagen(bitmap);
 
                 // cargar los valores y guardarlos en firebase
 
@@ -76,6 +96,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
                 datosUsuario.put("Calificacion",calificacion);
                 datosUsuario.put("Ingredientes",ingredientes);
                 datosUsuario.put("Preparacion",preparacion);
+                datosUsuario.put("Foto",foto);
 
                 mRootReference.child("Usuario").push().setValue(datosUsuario); /*verificar si guarda los datos como oauth*/
 
@@ -107,5 +128,44 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+
+    private void cargarImagen(){
+
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        intent.setType("image/");
+        startActivityForResult(intent.createChooser(intent,"selecione la aplicacion"),10);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode==RESULT_OK){  // verifica si obtuvimos bien la imagen
+            Uri path = data.getData();
+            imagen.setImageURI(path);
+
+
+
+
+            try {
+                //Cómo obtener el mapa de bits de la Galería
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), path);
+                //Configuración del mapa de bits en ImageView
+                imagen.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            //DatabaseReference destino = mRootReference.child("foto").child(Uri.)
+        }
+    }
+
+    public String getStringImagen(Bitmap bmp){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage =  Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
     }
 }
