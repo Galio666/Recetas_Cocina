@@ -8,7 +8,8 @@
         android:id="@+id/UsuarioImagen"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"/>
+        android:background="@color/colorAccent"
+        android:scaleType="centerCrop" />
     <TextView
         android:id="@+id/UsuarioNombre"
         android:layout_width="wrap_content"

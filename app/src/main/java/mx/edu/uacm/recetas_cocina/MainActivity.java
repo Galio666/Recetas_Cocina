@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView)findViewById(R.id.navview);
        // imagen=(ImageView) findViewById(R.id.navview);
-        //usuario=(TextView)findViewById(R.id.navview);
+        usuario=(TextView)findViewById(R.id.UsuarioNombre);
 
 
 
@@ -106,6 +106,22 @@ public class MainActivity extends AppCompatActivity {
 
                 //Desplegamos el email en el toast
                 Toast.makeText(this , ""+user.getEmail(), Toast.LENGTH_SHORT).show();
+                View header=navigationView.getHeaderView(0);
+                TextView text=(TextView) header.findViewById(R.id.UsuarioNombre);
+                ImageView imagen=(ImageView)header.findViewById(R.id.UsuarioImagen);
+
+                Uri uri=user.getPhotoUrl();
+
+
+
+                text.setText(user.getEmail());
+
+
+
+
+                imagen.setImageURI(uri);
+                System.out.println(uri);
+
 
 
                 //usuario.setText(user.getEmail());
