@@ -16,17 +16,38 @@
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toStartOf="@+id/edt_nombre"
         app:layout_constraintStart_toStartOf="@+id/edt_nombre"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:titleTextColor="@android:color/white"
         tools:ignore="MissingConstraints" />
+
+    <ScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/my_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
 
     <TextView
         android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="29dp"
         android:text="@string/nombre_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/editText3"
@@ -39,8 +60,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="5dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="38dp"
         android:text="@string/dificultad_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/ed7"
@@ -80,7 +101,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="2dp"
-        android:layout_marginBottom="49dp"
+        android:layout_marginBottom="48dp"
         android:text="@string/categoria_receta"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/edt_ingredientes"
@@ -93,7 +114,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginBottom="35dp"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/edt_preparacion"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,38 +126,41 @@
         android:id="@+id/edt_preparacion"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="98dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_agregar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText7"
         app:layout_constraintTop_toBottomOf="@+id/edt_ingredientes" />
+
 
     <EditText
         android:id="@+id/edt_nombre"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        app:layout_constraintTop_toTopOf="@+id/editText" />
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        android:layout_height="57dp"
+        android:layout_marginTop="178dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="179dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_ingredientes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_agregar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="7dp"
@@ -151,12 +175,23 @@
         android:id="@+id/menuCat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="14dp"
+        android:prompt="@string/tituloCat"
         android:scrollbarSize="75px"
+        android:spinnerMode="dialog"
         app:layout_constraintBottom_toBottomOf="@+id/ed7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ed7"
         app:layout_constraintTop_toTopOf="@+id/ed7" />
+
+    <EditText
+        android:id="@+id/edt_aux"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
