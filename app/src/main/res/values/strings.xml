@@ -12,11 +12,12 @@
     <string name="preparacion_receta">Preparacion</string>
     <string name="btn_agregar">Agregar</string>
     <string-array name="categorias">
-        <item>Entrada</item>
-        <item>Sopa</item>
+        <item>Entradas</item>
+        <item>Sopas</item>
         <item>Plato Fuerte</item>
         <item>Postres</item>
     </string-array>
+    <string name="tituloCat">Selecione la categoría</string>
 
 
 
