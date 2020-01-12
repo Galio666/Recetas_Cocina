@@ -1,5 +1,6 @@
 package mx.edu.uacm.recetas_cocina;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,6 +19,9 @@ import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,7 +33,8 @@ import com.bumptech.glide.Glide;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements  NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -38,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imagen;
     TextView usuario;
     private FirebaseUser user;
+    TextView header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         // imagen=(ImageView) findViewById(R.id.navview);
         usuario = (TextView) findViewById(R.id.UsuarioNombre);
         imagen = (ImageView) findViewById(R.id.UsuarioImagen);
+
 
 
         opcionesregistro = Arrays.asList(
@@ -112,13 +119,16 @@ public class MainActivity extends AppCompatActivity {
                 text.setText(user.getEmail());
 
 
-                Glide.with(getBaseContext()).load(uri+"?height=500").into(imagen);
+                Glide.with(getBaseContext()).load(uri + "?height=500").into(imagen);
 
 
                 System.out.println(uri);
 
 
                 //usuario.setText(user.getEmail());
+
+            } else {
+                Toast.makeText(this, "" + response.getError().getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         }
@@ -131,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -141,4 +152,30 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        int id=menuItem.getItemId();
+
+        if(id==R.id.cerrar_sesion){
+            AuthUI.getInstance()
+                    .signOut( MainActivity.this).
+                    addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText( MainActivity.this ,""+e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        return true;
+    }
 }
+
+
+

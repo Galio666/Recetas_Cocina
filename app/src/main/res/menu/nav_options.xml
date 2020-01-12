@@ -2,40 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/menu_calculadoras"
-            android:icon="@color/colorAccent"
-            android:title="Calculadoras" />
-        <item
-            android:id="@+id/menu_records"
-            android:title="Mis records"
-            android:icon="@android:drawable/ic_input_get"
-            />
-        <item
-            android:id="@+id/menu_recetas"
-            android:icon="@color/colorPrimary"
-            android:title="Recetas" />
-        <item
-            android:id="@+id/menu_motivacion"
-            android:icon="@color/colorPrimaryDark"
-            android:title="Motivación" />
-        <item
-            android:title="Información"
-            android:id="@+id/menu_informacion"
-            android:icon="@android:drawable/ic_dialog_info"
-            />
+            android:id="@+id/cerrar_sesion"
+            android:icon="@android:drawable/ic_lock_power_off"
+            android:title="@string/cerrar_sesion" />
+
 
     </group>
 
-    <item android:title="Otras opciones">
-        <menu>
-            <item
-                android:id="@+id/menu_configuracion"
-                android:icon="@color/com_facebook_likeboxcountview_text_color"
-                android:title="Configuración" />
+
 
 
         </menu>
-    </item>
 
 
-</menu>
+

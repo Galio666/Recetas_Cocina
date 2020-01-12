@@ -18,7 +18,7 @@
         <item>Postres</item>
     </string-array>
     <string name="tituloCat">Selecione la categoría</string>
-
+    <string name="cerrar_sesion">Cerrar Sesión</string>
 
 
 </resources>
