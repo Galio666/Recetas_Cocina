@@ -5,10 +5,10 @@ public class Receta_Detalles {
     private String nombreReceta;
     private String tipoReceta;
     private String imagen;
-    private String rating;
+    private int rating;
 
 
-    public Receta_Detalles(String nombreReceta, String tipoReceta, String imagen, String rating) {
+    public Receta_Detalles(String nombreReceta, String tipoReceta, String imagen, int rating) {
         this.nombreReceta = nombreReceta;
         this.tipoReceta = tipoReceta;
         this.imagen = imagen;
@@ -39,11 +39,11 @@ public class Receta_Detalles {
         this.imagen = imagen;
     }
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 }
