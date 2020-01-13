@@ -81,6 +81,28 @@ public class MainActivity extends AppCompatActivity
                    list.add(d);
                }
                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
+
+               /****ixchel*/
+
+
+
+/*++++++++++++
+
+               adaptadorRecetaFirebase.setOnClickListener(new View.OnClickListener(){
+   @Override
+   public void onClick(View v){
+          Toast.makeText(getApplicationContext(),"ixSeleción:"+   list.get
+                                       (recycler.getChildAdapterPosition(v)).getNombre(),Toast.LENGTH_SHORT).show();
+ }
+
+        });
+
+
++++++++++++*/
+
+
+
+
                recycler.setAdapter(adaptadorRecetaFirebase);
            }
 
