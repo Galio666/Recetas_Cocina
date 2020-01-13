@@ -1,12 +1,14 @@
 package mx.edu.uacm.recetas_cocina;
 
 import android.content.Context;
+import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,11 +18,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import static com.squareup.picasso.Picasso.*;
+
 
 public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRecetaFirebase.ViewHolderRecetas>{
 
     Context context;
     ArrayList<Receta_Detalles> detallesrecetas;
+    private View.OnClickListener listener;
 
     public AdaptadorRecetaFirebase(Context context, ArrayList<Receta_Detalles> detallesrecetas) {
         this.context = context;
@@ -31,6 +36,7 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
     @Override
     public AdaptadorRecetaFirebase.ViewHolderRecetas onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new AdaptadorRecetaFirebase.ViewHolderRecetas(LayoutInflater.from(context).inflate(R.layout.detalle_receta,parent,false));
+
     }
 
     @Override
@@ -38,9 +44,12 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
         holder.textViewNombreReceta.setText(detallesrecetas.get(position).getNombre());
         holder.textViewTipoReceta.setText(detallesrecetas.get(position).getCategoria());
-        Picasso.get().load(detallesrecetas.get(position).getFoto()).into(holder.imagen);
+        get().load(detallesrecetas.get(position).getFoto()).into(holder.imagen);
+
 
         holder.dificultad.setNumStars(detallesrecetas.get(position).getCalificacion());
+
+
 
     }
 
@@ -49,6 +58,23 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
         return detallesrecetas.size();
     }
 
+/*********ixchel
+
+    public void setOnClickListener(View.OnClickListener listener){
+
+        this.listener=listener;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+
+        if(listener != null){
+            listener.onClick(v);
+        }
+
+    }
+*/
     public class ViewHolderRecetas extends RecyclerView.ViewHolder {
 
          TextView textViewNombreReceta;
@@ -63,7 +89,20 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
            imagen = (ImageView)itemView.findViewById(R.id.imagenReceta);
            dificultad = (RatingBar)itemView.findViewById(R.id.Dificultad);
 
+           imagen.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+
+
+                   Toast.makeText(context,"prueba",Toast.LENGTH_SHORT).show();
+
+
+               }
+           });
+
+
         }
+
 
 
         /*

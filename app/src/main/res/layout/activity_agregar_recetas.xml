@@ -8,15 +8,14 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="14dp"
         android:background="@color/flotante"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toStartOf="@+id/edt_nombre"
-        app:layout_constraintStart_toStartOf="@+id/edt_nombre"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@android:color/white"
         tools:ignore="MissingConstraints" />
 
@@ -28,14 +27,15 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="82dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/my_toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
@@ -43,8 +43,8 @@
 
     <TextView
         android:id="@+id/editText"
-        android:layout_width="123dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="29dp"
@@ -53,18 +53,18 @@
         app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintEnd_toStartOf="@+id/edt_nombre"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/editText3"
-        android:layout_width="121dp"
-        android:layout_height="47dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="25dp"
         android:text="@string/dificultad_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/ed7"
+        app:layout_constraintBottom_toTopOf="@+id/menuCat"
         app:layout_constraintEnd_toStartOf="@+id/ratingBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
@@ -103,31 +103,30 @@
         android:layout_height="0dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="18dp"
         android:text="@string/categoria_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/edt_ingredientes"
+        app:layout_constraintBottom_toBottomOf="@+id/menuCat"
         app:layout_constraintEnd_toStartOf="@+id/menuCat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toTopOf="@+id/menuCat" />
 
 
     <EditText
         android:id="@+id/edt_ingredientes"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="14dp"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/edt_preparacion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/ed7" />
+        app:layout_constraintTop_toBottomOf="@+id/menuCat" />
 
     <EditText
         android:id="@+id/edt_preparacion"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="3dp"
         android:textSize="65px"
         app:layout_constraintBottom_toTopOf="@+id/imagenRec"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,15 +136,15 @@
     <EditText
         android:id="@+id/edt_nombre"
         android:layout_width="0dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="71dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="78dp"
+        android:layout_marginBottom="3dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toTopOf="@+id/my_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
 
     <RatingBar
@@ -176,13 +175,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="19dp"
         android:prompt="@string/tituloCat"
         android:scrollbarSize="75px"
         android:spinnerMode="dialog"
-        app:layout_constraintBottom_toBottomOf="@+id/ed7"
+        app:layout_constraintBottom_toTopOf="@+id/edt_ingredientes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ed7"
-        app:layout_constraintTop_toTopOf="@+id/ed7" />
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <EditText
         android:id="@+id/edt_aux"
@@ -208,6 +208,7 @@
         android:layout_width="188dp"
         android:layout_height="0dp"
         android:layout_marginEnd="97dp"
+        android:layout_marginBottom="2dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_galeria"
         app:layout_constraintEnd_toEndOf="@+id/bt_galeria"
         app:layout_constraintTop_toBottomOf="@+id/edt_preparacion" />
