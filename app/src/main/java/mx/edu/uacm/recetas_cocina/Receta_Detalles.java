@@ -1,49 +1,55 @@
 package mx.edu.uacm.recetas_cocina;
 
+import android.view.View;
+
 public class Receta_Detalles {
 
-    private String nombreReceta;
-    private String tipoReceta;
-    private String imagen;
-    private int rating;
+    private String Nombre;
+    private String Categoria;
+    private String Foto;
+    private int Calificacion;
 
-
-    public Receta_Detalles(String nombreReceta, String tipoReceta, String imagen, int rating) {
-        this.nombreReceta = nombreReceta;
-        this.tipoReceta = tipoReceta;
-        this.imagen = imagen;
-        this.rating = rating;
+    public Receta_Detalles() {
     }
 
-    public String getNombreReceta() {
-        return nombreReceta;
+    public Receta_Detalles(String Nombre, String Categoria, String Foto, int Calificacion) {
+        this.Nombre = Nombre;
+        this.Categoria = Categoria;
+        this.Foto = Foto;
+        this.Calificacion = Calificacion;
     }
 
-    public void setNombreReceta(String nombreReceta) {
-        this.nombreReceta = nombreReceta;
+
+
+    public String getNombre() {
+        return Nombre;
     }
 
-    public String getTipoReceta() {
-        return tipoReceta;
+    public void setNombre(String nombre) {
+        this.Nombre = nombre;
     }
 
-    public void setTipoReceta(String tipoReceta) {
-        this.tipoReceta = tipoReceta;
+    public String getCategoria() {
+        return Categoria;
     }
 
-    public String getImagen() {
-        return imagen;
+    public void setCategoria(String categoria) {
+        this.Categoria = categoria;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public String getFoto() {
+        return Foto;
     }
 
-    public int getRating() {
-        return rating;
+    public void setFoto(String foto) {
+        this.Foto = foto;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public int getCalificacion() {
+        return Calificacion;
+    }
+
+    public void setCalificacion(int calificacion) {
+        this.Calificacion = calificacion;
     }
 }

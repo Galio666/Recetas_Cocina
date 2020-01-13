@@ -16,7 +16,7 @@ public class ViewHolderRecetas extends RecyclerView.ViewHolder {
 
     ViewHolderRecetas(@NonNull View itemView) {
         super(itemView);
-        textViewNombreReceta = itemView.findViewById(R.id.nombreReceta);
+        textViewNombreReceta = itemView.findViewById(R.id.nombre);
         textViewTipoReceta = itemView.findViewById(R.id.TipoReceta);
         imagen=itemView.findViewById(R.id.imagenReceta);
         dificultad=itemView.findViewById(R.id.Dificultad);

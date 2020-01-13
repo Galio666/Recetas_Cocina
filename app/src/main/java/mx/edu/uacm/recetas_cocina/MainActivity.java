@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
@@ -27,12 +29,17 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity
         implements  NavigationView.OnNavigationItemSelectedListener {
@@ -45,12 +52,43 @@ public class MainActivity extends AppCompatActivity
     TextView usuario;
     private FirebaseUser user;
     TextView header;
-    RecyclerView recyclerView;
+    RecyclerView recycler;
+    AdaptadorRecetaFirebase adaptadorRecetaFirebase;
+    DatabaseReference reference;
+    ArrayList<Receta_Detalles> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
+        recycler.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseDatabase database=FirebaseDatabase.getInstance();
+        reference=database.getReference().child("Usuario");
+
+        //reference=FirebaseDatabase.getInstance().getReference().child("Usuario");
+
+
+
+       reference.addValueEventListener(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+               list=new ArrayList<>();
+               for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                   Receta_Detalles d =dataSnapshot1.getValue(Receta_Detalles.class);
+                   list.add(d);
+               }
+               adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
+               recycler.setAdapter(adaptadorRecetaFirebase);
+           }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError databaseError) {
+               Toast.makeText(MainActivity.this, "Algo salio mal", Toast.LENGTH_SHORT).show();
+           }
+       });
 
 
         setToolBar();

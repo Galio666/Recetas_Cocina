@@ -1,50 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:weightSum="2"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imagenReceta"
-        android:layout_width="190dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/Dificultad"
-        app:layout_constraintStart_toStartOf="@+id/TipoReceta"
-        app:layout_constraintTop_toBottomOf="@+id/TipoReceta"
-        app:srcCompat="@color/browser_actions_bg_grey" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/TipoReceta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="13dp"
+            android:text="Tipo"
+            />
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="55dp"
+            android:layout_marginBottom="16dp"
+            android:text="Titulo Receta" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imagenReceta"
+            android:layout_width="190dp"
+           android:layout_marginBottom="16dp"
+            android:layout_height="190dp"
+            />
+
+    </LinearLayout>
 
     <RatingBar
         android:id="@+id/Dificultad"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="317dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenReceta" />
+        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/TipoReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:text="Tipo"
-        app:layout_constraintBottom_toTopOf="@+id/imagenReceta"
-        app:layout_constraintStart_toStartOf="@+id/nombreReceta"
-        app:layout_constraintTop_toBottomOf="@+id/nombreReceta" />
 
-    <TextView
-        android:id="@+id/nombreReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="16dp"
-        android:text="Titulo Receta"
-        app:layout_constraintBottom_toTopOf="@+id/TipoReceta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
