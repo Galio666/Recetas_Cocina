@@ -167,5 +167,6 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         byte[] imageBytes = baos.toByteArray();
         String encodedImage =  Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
+
     }
 }

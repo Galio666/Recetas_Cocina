@@ -36,9 +36,12 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
     @Override
     public void onBindViewHolder(@NonNull ViewHolderRecetas holder, int position) {
 
-        holder.getTextViewNombreReceta().setText(detallesrecetas.get(position).getNombre());
+        holder.textViewNombreReceta.setText(detallesrecetas.get(position).getNombre());
         holder.textViewTipoReceta.setText(detallesrecetas.get(position).getCategoria());
         Picasso.get().load(detallesrecetas.get(position).getFoto()).into(holder.imagen);
+
+        holder.dificultad.setNumStars(detallesrecetas.get(position).getCalificacion());
+
     }
 
     @Override
@@ -48,23 +51,22 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
     public class ViewHolderRecetas extends RecyclerView.ViewHolder {
 
-        private TextView textViewNombreReceta;
-        private TextView textViewTipoReceta;
-        private ImageView imagen;
-        private RatingBar dificultad;
+         TextView textViewNombreReceta;
+         TextView textViewTipoReceta;
+         ImageView imagen;
+         RatingBar dificultad;
 
-        public ViewHolderRecetas(@NonNull View itemView, TextView textViewNombreReceta, TextView textViewTipoReceta, ImageView imagen, RatingBar dificultad) {
+        public ViewHolderRecetas(@NonNull View itemView) {
             super(itemView);
-            this.textViewNombreReceta = textViewNombreReceta;
-            this.textViewTipoReceta = textViewTipoReceta;
-            this.imagen = imagen;
-            this.dificultad = dificultad;
+           textViewNombreReceta =(TextView) itemView.findViewById(R.id.nombre);
+           textViewTipoReceta = (TextView) itemView.findViewById(R.id.TipoReceta);
+           imagen = (ImageView)itemView.findViewById(R.id.imagenReceta);
+           dificultad = (RatingBar)itemView.findViewById(R.id.Dificultad);
+
         }
 
-        public ViewHolderRecetas(View inflate) {
-            super(inflate);
-        }
 
+        /*
         public TextView getTextViewNombreReceta() {
             return textViewNombreReceta;
         }
@@ -95,7 +97,7 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
         public void setDificultad(RatingBar dificultad) {
             this.dificultad = dificultad;
-        }
+        }*/
     }
 
 
