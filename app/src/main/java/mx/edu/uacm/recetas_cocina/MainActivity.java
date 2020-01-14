@@ -136,8 +136,8 @@ public class MainActivity extends AppCompatActivity
         Intent var2 = new Intent(this, Desplegar_Receta.class);
         startActivity(var2);
     }
-*/
 
+*/
 
     public void mostrarOpcionesRegistro() {
         startActivityForResult(

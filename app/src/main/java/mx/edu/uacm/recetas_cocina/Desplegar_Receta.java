@@ -18,23 +18,40 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class Desplegar_Receta extends AppCompatActivity {
+//implements AdaptadorRecetaFirebase.OnItemClickListener
+public class Desplegar_Receta extends AppCompatActivity  {
 
     TextView titulo;
-
+    String prueba;
+public static final String EXTRA_CREATOR = "crearNombre";
     RecyclerView recycler;
     AdaptadorRecetaFirebase adaptadorRecetaFirebase;
     DatabaseReference reference;
     ArrayList<Receta_Detalles> list;
+    private Object Desplegar_Receta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desplegar__receta);
 
+/*
+        Intent intent = getIntent();
+         prueba = intent.getStringExtra(EXTRA_CREATOR);
+        titulo = findViewById(R.id.titulo);
+
+       titulo.setText(prueba);
+
+
+        prueba = getIntent().getExtras().get("Nombre").toString();
+
+
+
+        Toast.makeText(Desplegar_Receta.this,prueba,Toast.LENGTH_SHORT).show();
 
         titulo = findViewById(R.id.titulo);
 
@@ -42,9 +59,9 @@ public class Desplegar_Receta extends AppCompatActivity {
 
 
         titulo.setText(intent.getStringExtra("titulo"));
+*/
 
 
-/*
 
         recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -65,13 +82,11 @@ public class Desplegar_Receta extends AppCompatActivity {
                     list.add(d);
                 }
                 adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(Desplegar_Receta.this,list);
-
-
-
-
-
-
                 recycler.setAdapter(adaptadorRecetaFirebase);
+
+                //adaptadorRecetaFirebase.setOnItemClickListener(Desplegar_Receta.this);
+
+
             }
 
             @Override
@@ -81,9 +96,20 @@ public class Desplegar_Receta extends AppCompatActivity {
         });
 
 
-*/
+
 
 
 
     }
+
+    /*
+//checar lo de las clases que mando a llamar
+    @Override
+    public void onItemClick(int position) {
+        Intent intent = new Intent(this,Desplegar_Receta.class);
+        Receta_Detalles clickedItem =  list.get(position);
+        intent.putExtra(EXTRA_CREATOR, clickedItem.getNombre());
+
+        startActivity(intent);
+    }*/
 }
