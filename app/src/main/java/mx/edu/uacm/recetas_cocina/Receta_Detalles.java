@@ -8,6 +8,8 @@ public class Receta_Detalles {
     private String Categoria;
     private String Foto;
     private int Calificacion;
+    private  String Ingredientes;
+    private  String Preparacion;
 
     public Receta_Detalles() {
     }
@@ -51,5 +53,22 @@ public class Receta_Detalles {
 
     public void setCalificacion(int calificacion) {
         this.Calificacion = calificacion;
+    }
+
+
+    public String getIngredientes() {
+        return Ingredientes;
+    }
+
+    public void setIngredientes(String ingredientes) {
+        Ingredientes = ingredientes;
+    }
+
+    public String getPreparacion() {
+        return Preparacion;
+    }
+
+    public void setPreparacion(String preparacion) {
+        Preparacion = preparacion;
     }
 }

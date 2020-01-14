@@ -75,8 +75,11 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
                 Intent var2 = new Intent(v.getContext(),Desplegar_Receta.class);
                 var2.putExtra("Nombre",detallesrecetas.get(position).getNombre());
                 var2.putExtra("Categoria",detallesrecetas.get(position).getCategoria());
-                var2.putExtra("Foto",detallesrecetas.get(position).getFoto());
+                //var2.putExtra("Foto",detallesrecetas.get(position).getFoto());
                 var2.putExtra("Calificacion",detallesrecetas.get(position).getCalificacion());
+                var2.putExtra("Ingredientes",detallesrecetas.get(position).getIngredientes());
+                var2.putExtra("Preparacion",detallesrecetas.get(position).getPreparacion());
+
                 v.getContext().startActivity(var2);
             }
         });
