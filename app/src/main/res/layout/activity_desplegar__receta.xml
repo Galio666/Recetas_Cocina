@@ -6,70 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".Desplegar_Receta">
 
-    <EditText
-        android:id="@+id/ingredientesReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="44dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/preparacionReceta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dificultadReceta"
-        android:isIndicator="true"/>
-
-    <EditText
-        android:id="@+id/preparacionReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="308dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientesReceta"
-        android:isIndicator="true"/>
+    <ImageView
+        android:id="@+id/imagenReceta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/dificultadReceta"
+        app:layout_constraintEnd_toEndOf="@+id/tituloReceta"
+        app:layout_constraintStart_toStartOf="@+id/dificultadReceta"
+        app:layout_constraintTop_toBottomOf="@+id/detalleReceta"
+        app:srcCompat="@color/browser_actions_bg_grey" />
 
     <RatingBar
         android:id="@+id/dificultadReceta"
-        android:layout_width="236dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="21dp"
         app:layout_constraintBottom_toTopOf="@+id/ingredientesReceta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detalleReceta"
-        android:isIndicator="true"/>
+        app:layout_constraintTop_toBottomOf="@+id/imagenReceta" />
 
     <TextView
         android:id="@+id/tituloReceta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="27dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="11dp"
+        android:isIndicator="true"
         android:text="Prueba2"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/detalleReceta"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:isIndicator="true"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/detalleReceta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="29dp"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="13dp"
+        android:isIndicator="true"
         android:text="prueba"
-        app:layout_constraintBottom_toTopOf="@+id/dificultadReceta"
+        app:layout_constraintBottom_toTopOf="@+id/imagenReceta"
+        app:layout_constraintStart_toStartOf="@+id/tituloReceta"
+        app:layout_constraintTop_toBottomOf="@+id/tituloReceta" />
+
+    <TextView
+        android:id="@+id/ingredientesReceta"
+        android:layout_width="327dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="133dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/preparacionReceta"
+        app:layout_constraintStart_toStartOf="@+id/dificultadReceta"
+        app:layout_constraintTop_toBottomOf="@+id/dificultadReceta" />
+
+    <TextView
+        android:id="@+id/preparacionReceta"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="41dp"
+        android:layout_marginBottom="150dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tituloReceta"
-        android:isIndicator="true"/>
+        app:layout_constraintTop_toBottomOf="@+id/ingredientesReceta" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
