@@ -11,6 +11,7 @@
     <string name="favorito_receta">Favorito</string>
     <string name="preparacion_receta">Preparacion</string>
     <string name="btn_agregar">Agregar</string>
+    <string name="titulo_Receta">Titulo Receta</string>
     <string-array name="categorias">
         <item>Entradas</item>
         <item>Sopas</item>

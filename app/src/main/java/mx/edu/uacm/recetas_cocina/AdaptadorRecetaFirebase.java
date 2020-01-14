@@ -10,6 +10,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -33,6 +34,15 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
     ArrayList<Receta_Detalles> detallesrecetas;
     private View.OnClickListener listener;
     int []arr;
+    private OnItemClickListener mlistener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mlistener=listener;
+    }
 
     public AdaptadorRecetaFirebase(Context context, ArrayList<Receta_Detalles> detallesrecetas) {
         this.context = context;
@@ -94,7 +104,9 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
     }
 
 
+
     public class ViewHolderRecetas extends RecyclerView.ViewHolder {
+
 
          TextView textViewNombreReceta;
          TextView textViewTipoReceta;
@@ -110,9 +122,26 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
            imagen = (ImageView)itemView.findViewById(R.id.imagenReceta);
            dificultad = (RatingBar)itemView.findViewById(R.id.Dificultad);
 
+
+           itemView.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   if (mlistener != null){
+                       int position = getAdapterPosition();
+                       if (position != RecyclerView.NO_POSITION){
+                           mlistener.onItemClick(position);
+                       }
+                   }
+               }
+           });
+
+          // itemView.setOnClickListener(this);
+/*
+=======
            //itemView.setOnClickListener(this);
 
            /*
+>>>>>>> 1fa19f7f70949db006003d86089f8799342e4411
 imagen.setOnClickListener(new View.OnClickListener() {
 
     @Override
@@ -130,12 +159,15 @@ imagen.setOnClickListener(new View.OnClickListener() {
         }
 
 
+/*
+=======
+
 
         @Override
         public void onClick(View v){
 
             Intent intent = new Intent(context,Desplegar_Receta.class);
-            intent.putExtra("nombre"+textViewNombreReceta,"nombre"+getAdapterPosition());
+            intent.putExtra("Nombre",""+getAdapterPosition());
             context.startActivity(intent);
 
         }*/
