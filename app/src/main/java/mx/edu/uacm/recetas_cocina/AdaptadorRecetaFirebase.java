@@ -1,6 +1,7 @@
 package mx.edu.uacm.recetas_cocina;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.Transliterator;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -65,6 +68,8 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
         holder.dificultad.setNumStars(detallesrecetas.get(position).getCalificacion());
 
+        //holder.set
+
 
 
     }
@@ -91,35 +96,63 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
     }
 */
-    public class ViewHolderRecetas extends RecyclerView.ViewHolder {
+    public class ViewHolderRecetas extends RecyclerView.ViewHolder implements View.OnClickListener {
 
          TextView textViewNombreReceta;
          TextView textViewTipoReceta;
          ImageView imagen;
          RatingBar dificultad;
+         TextView prueba;
+private  ItemClickListener itemClickListener;
 
-        public ViewHolderRecetas(@NonNull View itemView) {
+        public ViewHolderRecetas(@NonNull final View itemView) {
             super(itemView);
            textViewNombreReceta =(TextView) itemView.findViewById(R.id.nombre);
            textViewTipoReceta = (TextView) itemView.findViewById(R.id.TipoReceta);
            imagen = (ImageView)itemView.findViewById(R.id.imagenReceta);
            dificultad = (RatingBar)itemView.findViewById(R.id.Dificultad);
 
+
+            //prueba=(TextView) itemView.findViewById(R.id.textopruebaintet);
+
+            itemView.setOnClickListener(this);
+/*
            imagen.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
 
 
-                   Toast.makeText(context,"prueba",Toast.LENGTH_SHORT).show();
+
+
+
+                   Intent var2 = new Intent(view.getContext(),Desplegar_Receta.class);
+                   view.getContext().startActivity(var2);
+                   //Intent var = new Intent(this,Desplegar_Receta.class);
+
+                   //Intent var
+
+
 
 
                }
            });
-
+*/
 
         }
 
+    @Override
+    public void onClick(View v) {
+        //this.imagen.onIt
+    }
 
+/*
+    //Metodo del boton flotante
+    public void MReceta(View view) {
+
+        Intent int1 = new Intent(this, Desplegar_Receta.class);
+        context.startActivity(int1);
+    }
+*/
 
         /*
         public TextView getTextViewNombreReceta() {
