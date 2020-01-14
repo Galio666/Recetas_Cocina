@@ -7,8 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.util.Base64;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,14 +26,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 //implements AdaptadorRecetaFirebase.OnItemClickListener
 public class Desplegar_Receta extends AppCompatActivity  {
 
     TextView titulo;
+
     String prueba;
 public static final String EXTRA_CREATOR = "crearNombre";
+
+    TextView tipo;
+    TextView ingredientes;
+    TextView preparacion;
+    RatingBar dificultad;
+    ImageView imagen;
+
+
     RecyclerView recycler;
     AdaptadorRecetaFirebase adaptadorRecetaFirebase;
     DatabaseReference reference;
@@ -54,14 +70,33 @@ public static final String EXTRA_CREATOR = "crearNombre";
         Toast.makeText(Desplegar_Receta.this,prueba,Toast.LENGTH_SHORT).show();
 
         titulo= findViewById(R.id.tituloReceta);
+        tipo=findViewById(R.id.detalleReceta);
+        ingredientes=findViewById(R.id.ingredientesReceta);
+        preparacion=findViewById(R.id.preparacionReceta);
+        dificultad=findViewById(R.id.dificultadReceta);
+        imagen=findViewById(R.id.imagenReceta);
 
         Intent intent = getIntent();
         String nombre=getIntent().getStringExtra("Nombre");
+        String tipo1=getIntent().getStringExtra("Categoria");
+        String ingredientes1=getIntent().getStringExtra("Ingredientes");
+        String preparacion1=getIntent().getStringExtra("Preparacion");
+        int dificultad1=getIntent().getIntExtra("Calificacion",0);
+        String urlImagen=getIntent().getStringExtra("Foto");
+
+       // System.out.println("Nuemero de estrellas es "+dificultad1);
+        //System.out.println("Ingredientes"+ingredientes1);
+
         titulo.setText(nombre);
+        tipo.setText(tipo1);
+        ingredientes.setText(ingredientes1);
+        preparacion.setText(preparacion1);
+        dificultad.setNumStars(dificultad1);
+        imagen.setImageBitmap(dislayImagen(urlImagen));
 
        // titulo.setText(intent.getStringExtra("titulo"));
 
-<<<<<<< HEAD
+
         titulo.setText(intent.getStringExtra("titulo"));
 */
 
@@ -104,6 +139,7 @@ public static final String EXTRA_CREATOR = "crearNombre";
 
     }
 
+
     /*
 //checar lo de las clases que mando a llamar
     @Override
@@ -114,4 +150,15 @@ public static final String EXTRA_CREATOR = "crearNombre";
 
         startActivity(intent);
     }*/
+
+    public Bitmap dislayImagen(String url){
+        Bitmap bmp = null;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        byte[] imageBytes = baos.toByteArray();
+        imageBytes= Base64.decode(url,Base64.DEFAULT);
+        Bitmap deBitmap= BitmapFactory.decodeByteArray(imageBytes,0,imageBytes.length);
+
+        return deBitmap;
+    }
+
 }

@@ -43,8 +43,14 @@
             android:id="@+id/my_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="0dp">
+
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:background="@drawable/fondo1">
+
 
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -58,7 +64,8 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/header_navigation_drawer"
         app:menu="@menu/nav_options"
-        android:layout_gravity="start">
+        android:layout_gravity="start"
+        android:isIndicator="true">
 
     </com.google.android.material.navigation.NavigationView>
 

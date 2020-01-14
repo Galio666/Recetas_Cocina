@@ -163,7 +163,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
     public String getStringImagen(Bitmap bmp){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        bmp.compress(Bitmap.CompressFormat.JPEG, 0, baos);
         byte[] imageBytes = baos.toByteArray();
         String encodedImage =  Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
