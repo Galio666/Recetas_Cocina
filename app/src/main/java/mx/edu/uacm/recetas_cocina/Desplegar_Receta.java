@@ -35,7 +35,7 @@ public class Desplegar_Receta extends AppCompatActivity  {
     TextView titulo;
 
     String prueba;
-public static final String EXTRA_CREATOR = "crearNombre";
+//public static final String EXTRA_CREATOR = "crearNombre";
 
     TextView tipo;
     TextView ingredientes;
@@ -55,19 +55,19 @@ public static final String EXTRA_CREATOR = "crearNombre";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_desplegar__receta);
 
-/*
-        Intent intent = getIntent();
-         prueba = intent.getStringExtra(EXTRA_CREATOR);
-        titulo = findViewById(R.id.titulo);
 
-       titulo.setText(prueba);
+        Intent intent = getIntent();
+         //prueba = intent.getStringExtra(EXTRA_CREATOR);
+        //titulo = findViewById(R.id.titulo);
+
+       //titulo.setText(prueba);
 
 
         prueba = getIntent().getExtras().get("Nombre").toString();
 
 
 
-        Toast.makeText(Desplegar_Receta.this,prueba,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(Desplegar_Receta.this,prueba,Toast.LENGTH_SHORT).show();
 
         titulo= findViewById(R.id.tituloReceta);
         tipo=findViewById(R.id.detalleReceta);
@@ -76,7 +76,7 @@ public static final String EXTRA_CREATOR = "crearNombre";
         dificultad=findViewById(R.id.dificultadReceta);
         imagen=findViewById(R.id.imagenReceta);
 
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
         String nombre=getIntent().getStringExtra("Nombre");
         String tipo1=getIntent().getStringExtra("Categoria");
         String ingredientes1=getIntent().getStringExtra("Ingredientes");
@@ -97,8 +97,8 @@ public static final String EXTRA_CREATOR = "crearNombre";
        // titulo.setText(intent.getStringExtra("titulo"));
 
 
-        titulo.setText(intent.getStringExtra("titulo"));
-*/
+        //titulo.setText(intent.getStringExtra("titulo"));
+
 
 
        // recycler=(RecyclerView) findViewById(R.id.my_recyclerView);

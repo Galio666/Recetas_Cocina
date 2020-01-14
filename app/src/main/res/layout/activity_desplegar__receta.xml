@@ -8,49 +8,55 @@
 
     <ImageView
         android:id="@+id/imagenReceta"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/dificultadReceta"
-        app:layout_constraintEnd_toEndOf="@+id/tituloReceta"
         app:layout_constraintStart_toStartOf="@+id/dificultadReceta"
         app:layout_constraintTop_toBottomOf="@+id/detalleReceta"
-        app:srcCompat="@color/browser_actions_bg_grey" />
+        app:srcCompat="@color/browser_actions_bg_grey" /><![CDATA[
+
+    app:layout_constraintTop_toBottomOf="@+id/imagenReceta" />
+
+
+
+
+
+
+
+
+
+
+    ]]>
 
     <RatingBar
         android:id="@+id/dificultadReceta"
+        style="@style/ImageRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="6dp"
+        android:isIndicator="true"
+
+        android:numStars="4"
+
         android:theme="@style/RatingBar"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/detalleReceta"
-        android:isIndicator="true"
-        android:theme="@style/RatingBar"
-        style="@style/ImageRatingBar"
-        android:numStars="4"/>
-
+        app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/imagenReceta" />
-
 
     <TextView
         android:id="@+id/tituloReceta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="9dp"
         android:isIndicator="true"
         android:shadowColor="@color/colorAccent"
         android:text="Prueba2"
         android:textColor="@color/colorAccent"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/detalleReceta"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/detalleReceta"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -62,7 +68,8 @@
         android:text="prueba"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/imagenReceta"
-        app:layout_constraintStart_toStartOf="@+id/tituloReceta"
+        app:layout_constraintEnd_toStartOf="@+id/imagenReceta"
+        app:layout_constraintStart_toStartOf="@+id/imagenReceta"
         app:layout_constraintTop_toBottomOf="@+id/tituloReceta" />
 
     <TextView
@@ -71,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="115dp"
         android:text="TextView"
         android:textColor="@color/flotante"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
@@ -85,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
         android:layout_marginEnd="41dp"
-        android:layout_marginBottom="151dp"
+        android:layout_marginBottom="182dp"
         android:text="TextView"
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,8 +104,6 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="10dp"
         android:text="Ingredientes:"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/ingredientesReceta"
@@ -109,7 +114,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="10dp"
         android:text="Preparación"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/preparacionReceta"

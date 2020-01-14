@@ -17,16 +17,19 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="13dp"
             android:text="Tipo"
-            />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="85dp"
+            android:textColor="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_marginTop="55dp"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginTop="65dp"
             android:layout_marginBottom="16dp"
-            android:text="Titulo Receta" />
+            android:text="Titulo Receta"
+            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
 
@@ -38,6 +41,7 @@
     android:id="@+id/imagenReceta"
     android:layout_width="190dp"
     android:layout_height="190dp"
+    android:layout_marginLeft="10dp"
     android:layout_marginBottom="16dp"/>
 
     </LinearLayout>
@@ -47,6 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:isIndicator="true"
+        android:layout_marginLeft="10dp"
         style="@style/ImageRatingBar"
         android:numStars="4"/>
 
