@@ -130,13 +130,13 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
+/*
     public void ImDetalle(View view) {
 
         Intent var2 = new Intent(this, Desplegar_Receta.class);
         startActivity(var2);
     }
-
+*/
 
 
     public void mostrarOpcionesRegistro() {

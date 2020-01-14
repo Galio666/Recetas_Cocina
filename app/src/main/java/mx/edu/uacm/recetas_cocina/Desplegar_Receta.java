@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,10 +36,15 @@ public class Desplegar_Receta extends AppCompatActivity {
         setContentView(R.layout.activity_desplegar__receta);
 
 
+        titulo = findViewById(R.id.titulo);
+
+        Intent intent = getIntent();
 
 
+        titulo.setText(intent.getStringExtra("titulo"));
 
 
+/*
 
         recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
         recycler.setLayoutManager(new LinearLayoutManager(this));
@@ -75,21 +81,7 @@ public class Desplegar_Receta extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 

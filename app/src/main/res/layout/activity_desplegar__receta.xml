@@ -6,21 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Desplegar_Receta">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/my_recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="0dp"
+        android:text="prueba"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="301dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
-
-
-
-
-
-
-    </androidx.recyclerview.widget.RecyclerView>
 </androidx.constraintlayout.widget.ConstraintLayout>
