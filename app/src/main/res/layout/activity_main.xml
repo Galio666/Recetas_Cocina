@@ -43,7 +43,7 @@
             android:layout_height="match_parent"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
-            android:background="@drawable/fondo_recycler_view">
+            android:background="@drawable/fondo1">
 
 
         </androidx.recyclerview.widget.RecyclerView>
