@@ -2,18 +2,18 @@ package mx.edu.uacm.recetas_cocina;
 
 public class Recetas {
 
-    public String nombre;
-    public String calificacion;
+    public String Nombre;
+  /*  public String calificacion;
     public String dificultad;
     public String ingredientes;
     public String categoria;
     public String favorito;
     public String preparacion;
-
+*/
     public Recetas() {
 
     }
-
+/*
     public Recetas(String nombre, String calificacion, String dificultad, String ingredientes, String categoria, String favorito, String preparacion) {
         this.nombre = nombre;
         this.calificacion = calificacion;
@@ -23,15 +23,15 @@ public class Recetas {
         this.favorito = favorito;
         this.preparacion = preparacion;
     }
-
+*/
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.Nombre = nombre;
     }
-
+/*
     public String getCalificacion() {
         return calificacion;
     }
@@ -79,7 +79,9 @@ public class Recetas {
     public void setPreparacion(String preparacion) {
         this.preparacion = preparacion;
     }
+*/
 
+/*
     @Override
     public String toString() {
         return "Recetas{" +
@@ -91,5 +93,5 @@ public class Recetas {
                 ", favorito='" + favorito + '\'' +
                 ", preparacion='" + preparacion + '\'' +
                 '}';
-    }
+    }*/
 }

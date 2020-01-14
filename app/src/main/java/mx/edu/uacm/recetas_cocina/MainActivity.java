@@ -82,23 +82,7 @@ public class MainActivity extends AppCompatActivity
                }
                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
 
-               /****ixchel*/
 
-
-
-/*++++++++++++
-
-               adaptadorRecetaFirebase.setOnClickListener(new View.OnClickListener(){
-   @Override
-   public void onClick(View v){
-          Toast.makeText(getApplicationContext(),"ixSeleción:"+   list.get
-                                       (recycler.getChildAdapterPosition(v)).getNombre(),Toast.LENGTH_SHORT).show();
- }
-
-        });
-
-
-+++++++++++*/
 
 
 
@@ -141,9 +125,18 @@ public class MainActivity extends AppCompatActivity
     //Metodo del boton flotante
     public void Flotante(View view) {
 
-        Intent int1 = new Intent(this, AgregarRecetas.class);
-        startActivity(int1);
+        Intent var1 = new Intent(this, AgregarRecetas.class);
+        startActivity(var1);
     }
+
+
+/*
+    public void ImDetalle(View view) {
+
+        Intent var2 = new Intent(this, Desplegar_Receta.class);
+        startActivity(var2);
+    }
+*/
 
 
     public void mostrarOpcionesRegistro() {
