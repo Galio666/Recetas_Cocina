@@ -36,27 +36,28 @@ public class Desplegar_Receta extends AppCompatActivity {
         setContentView(R.layout.activity_desplegar__receta);
 
 
-        titulo = findViewById(R.id.titulo);
+        titulo= findViewById(R.id.tituloReceta);
 
         Intent intent = getIntent();
+        String nombre=getIntent().getStringExtra("Nombre");
+        titulo.setText(nombre);
+
+       // titulo.setText(intent.getStringExtra("titulo"));
 
 
-        titulo.setText(intent.getStringExtra("titulo"));
 
 
-/*
+       // recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
+        //recycler.setLayoutManager(new LinearLayoutManager(this));
 
-        recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
-
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
-        reference=database.getReference().child("Usuario");
+        //FirebaseDatabase database=FirebaseDatabase.getInstance();
+        //reference=database.getReference().child("Usuario");
 
         //reference=FirebaseDatabase.getInstance().getReference().child("Usuario");
 
 
 
-        reference.addValueEventListener(new ValueEventListener() {
+        /*reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list=new ArrayList<>();
@@ -78,10 +79,10 @@ public class Desplegar_Receta extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(Desplegar_Receta.this, "Algo salio mal", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
 
-*/
+
 
 
 

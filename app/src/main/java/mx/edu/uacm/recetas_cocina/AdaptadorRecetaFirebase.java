@@ -56,8 +56,10 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
     }
 
+
+
     @Override
-    public void onBindViewHolder(@NonNull ViewHolderRecetas holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolderRecetas holder, final int position) {
 
         holder.textViewNombreReceta.setText(detallesrecetas.get(position).getNombre());
         holder.textViewTipoReceta.setText(detallesrecetas.get(position).getCategoria());
@@ -66,6 +68,18 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
 
         holder.dificultad.setNumStars(detallesrecetas.get(position).getCalificacion());
+        holder.imagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent var2 = new Intent(v.getContext(),Desplegar_Receta.class);
+                var2.putExtra("Nombre",detallesrecetas.get(position).getNombre());
+                var2.putExtra("Categoria",detallesrecetas.get(position).getCategoria());
+                var2.putExtra("Foto",detallesrecetas.get(position).getFoto());
+                var2.putExtra("Calificacion",detallesrecetas.get(position).getCalificacion());
+                v.getContext().startActivity(var2);
+            }
+        });
 
 
     }
@@ -76,7 +90,7 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
     }
 
 
-    public class ViewHolderRecetas extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolderRecetas extends RecyclerView.ViewHolder {
 
          TextView textViewNombreReceta;
          TextView textViewTipoReceta;
@@ -92,24 +106,25 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
            imagen = (ImageView)itemView.findViewById(R.id.imagenReceta);
            dificultad = (RatingBar)itemView.findViewById(R.id.Dificultad);
 
-           itemView.setOnClickListener(this);
-/*
+           //itemView.setOnClickListener(this);
+
+           /*
 imagen.setOnClickListener(new View.OnClickListener() {
+
     @Override
     public void onClick(View view) {
 
         Intent var2 = new Intent(view.getContext(),Desplegar_Receta.class);
+        var2.putExtra("Nombre",detallesrecetas.)
         view.getContext().startActivity(var2);
 
 
 
 
     }
-});*/
-
-
-
+});
         }
+
 
 
         @Override
@@ -119,7 +134,7 @@ imagen.setOnClickListener(new View.OnClickListener() {
             intent.putExtra("nombre"+textViewNombreReceta,"nombre"+getAdapterPosition());
             context.startActivity(intent);
 
-        }
+        }*/
 
 
     }
@@ -127,4 +142,4 @@ imagen.setOnClickListener(new View.OnClickListener() {
 
 
 
-}
+}}
