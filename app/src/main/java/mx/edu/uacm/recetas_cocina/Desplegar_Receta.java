@@ -53,27 +53,30 @@ public static final String EXTRA_CREATOR = "crearNombre";
 
         Toast.makeText(Desplegar_Receta.this,prueba,Toast.LENGTH_SHORT).show();
 
-        titulo = findViewById(R.id.titulo);
+        titulo= findViewById(R.id.tituloReceta);
 
         Intent intent = getIntent();
+        String nombre=getIntent().getStringExtra("Nombre");
+        titulo.setText(nombre);
 
+       // titulo.setText(intent.getStringExtra("titulo"));
 
+<<<<<<< HEAD
         titulo.setText(intent.getStringExtra("titulo"));
 */
 
 
+       // recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
+        //recycler.setLayoutManager(new LinearLayoutManager(this));
 
-        recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
-
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
-        reference=database.getReference().child("Usuario");
+        //FirebaseDatabase database=FirebaseDatabase.getInstance();
+        //reference=database.getReference().child("Usuario");
 
         //reference=FirebaseDatabase.getInstance().getReference().child("Usuario");
 
 
 
-        reference.addValueEventListener(new ValueEventListener() {
+        /*reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list=new ArrayList<>();
@@ -93,8 +96,7 @@ public static final String EXTRA_CREATOR = "crearNombre";
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(Desplegar_Receta.this, "Algo salio mal", Toast.LENGTH_SHORT).show();
             }
-        });
-
+        });*/
 
 
 

@@ -8,210 +8,146 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="411dp"
+        android:layout_height="54dp"
         android:background="@color/flotante"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@android:color/white"
         tools:ignore="MissingConstraints" />
 
     <ScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        tools:layout_editor_absoluteY="54dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="82dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        tools:layout_editor_absoluteY="54dp" />
 
 
     <TextView
         android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="29dp"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
         android:text="@string/nombre_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
-        app:layout_constraintEnd_toStartOf="@+id/edt_nombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="81dp" />
+
 
     <TextView
         android:id="@+id/editText3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="130dp"
+        android:layout_height="57dp"
         android:text="@string/dificultad_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/menuCat"
-        app:layout_constraintEnd_toStartOf="@+id/ratingBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="163dp" />
 
 
     <TextView
         android:id="@+id/editText4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="151dp"
+        android:layout_height="52dp"
         android:text="@string/ingredientes_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toBottomOf="@+id/edt_ingredientes"
-        app:layout_constraintEnd_toStartOf="@+id/edt_ingredientes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edt_ingredientes" />
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="326dp" />
 
 
     <TextView
         android:id="@+id/editText7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="4dp"
+        android:layout_width="159dp"
+        android:layout_height="57dp"
         android:text="@string/preparacion_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toBottomOf="@+id/edt_preparacion"
-        app:layout_constraintEnd_toStartOf="@+id/edt_preparacion"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/edt_preparacion" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="398dp" />
 
     <TextView
         android:id="@+id/ed7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="5dp"
+        android:layout_width="131dp"
+        android:layout_height="56dp"
         android:text="@string/categoria_receta"
         android:textSize="65px"
-        app:layout_constraintBottom_toBottomOf="@+id/menuCat"
-        app:layout_constraintEnd_toStartOf="@+id/menuCat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/menuCat" />
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="242dp" />
 
 
     <EditText
         android:id="@+id/edt_ingredientes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="14dp"
+        android:layout_width="228dp"
+        android:layout_height="67dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/edt_preparacion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText4"
-        app:layout_constraintTop_toBottomOf="@+id/menuCat" />
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="298dp" />
 
     <EditText
         android:id="@+id/edt_preparacion"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="3dp"
+        android:layout_width="181dp"
+        android:layout_height="100dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toTopOf="@+id/imagenRec"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText7"
-        app:layout_constraintTop_toBottomOf="@+id/edt_ingredientes" />
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="451dp" />
 
     <EditText
         android:id="@+id/edt_nombre"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="3dp"
+        android:layout_width="229dp"
+        android:layout_height="67dp"
         android:textSize="65px"
-        app:layout_constraintBottom_toBottomOf="@+id/editText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="71dp" />
 
 
     <RatingBar
         android:id="@+id/ratingBar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        android:layout_width="233dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText3"
-        app:layout_constraintTop_toTopOf="@+id/editText3" />
-
+        tools:layout_editor_absoluteY="160dp" />
 
     <Button
         android:id="@+id/btn_agregar"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="7dp"
         android:background="@color/flotante"
         android:text="@string/btn_agregar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_galeria" />
+        tools:layout_editor_absoluteY="604dp" />
 
     <Spinner
         android:id="@+id/menuCat"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="19dp"
+        android:layout_width="228dp"
+        android:layout_height="55dp"
         android:prompt="@string/tituloCat"
         android:scrollbarSize="75px"
         android:spinnerMode="dialog"
-        app:layout_constraintBottom_toTopOf="@+id/edt_ingredientes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ed7"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        tools:layout_editor_absoluteX="174dp"
+        tools:layout_editor_absoluteY="243dp" />
 
     <EditText
         android:id="@+id/edt_aux"
         android:layout_width="0px"
-        android:layout_height="0px"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="0px" />
 
     <Button
         android:id="@+id/bt_galeria"
-        android:layout_width="0dp"
+        android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:text="Foto"
-        app:layout_constraintBottom_toTopOf="@+id/btn_agregar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagenRec" />
+        tools:layout_editor_absoluteY="556dp" />
 
     <ImageView
         android:id="@+id/imagenRec"
-        android:layout_width="188dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_galeria"
-        app:layout_constraintEnd_toEndOf="@+id/bt_galeria"
-        app:layout_constraintTop_toBottomOf="@+id/edt_preparacion" />
+        android:layout_width="210dp"
+        android:layout_height="144dp"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="397dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
