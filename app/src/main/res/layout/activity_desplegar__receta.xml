@@ -43,7 +43,10 @@
         app:layout_constraintBottom_toTopOf="@+id/ingredientesReceta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detalleReceta"
-        android:isIndicator="true"/>
+        android:isIndicator="true"
+        android:theme="@style/RatingBar"
+        style="@style/ImageRatingBar"
+        android:numStars="4"/>
 
     <TextView
         android:id="@+id/tituloReceta"

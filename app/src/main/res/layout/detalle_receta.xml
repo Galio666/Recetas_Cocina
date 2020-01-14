@@ -34,15 +34,11 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
-
-
-        <ImageView
-            android:id="@+id/imagenReceta"
-            android:layout_width="190dp"
-            android:layout_height="190dp"
-            android:layout_marginBottom="16dp"
-
-             />
+<de.hdodenhof.circleimageview.CircleImageView
+    android:id="@+id/imagenReceta"
+    android:layout_width="190dp"
+    android:layout_height="190dp"
+    android:layout_marginBottom="16dp"/>
 
     </LinearLayout>
 
@@ -50,7 +46,8 @@
         android:id="@+id/Dificultad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:isIndicator="true"/>
-
+        android:isIndicator="true"
+        style="@style/ImageRatingBar"
+        android:numStars="4"/>
 
 </LinearLayout>
