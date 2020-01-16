@@ -24,97 +24,97 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="21dp"
-        android:theme="@style/RatingBar"
+
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toBottomOf="@+id/detalleReceta"
         android:isIndicator="true"
-        android:theme="@style/RatingBar"
-        style="@style/ImageRatingBar"
-        android:numStars="4"/>
-
-        app:layout_constraintTop_toBottomOf="@+id/imagenReceta" />
 
 
-    <TextView
-        android:id="@+id/tituloReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="11dp"
-        android:isIndicator="true"
-        android:shadowColor="@color/colorAccent"
-        android:text="Prueba2"
-        android:textColor="@color/colorAccent"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/detalleReceta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+     android:numStars="4"/>
 
-    <TextView
-        android:id="@+id/detalleReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:isIndicator="true"
-        android:text="prueba"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/imagenReceta"
-        app:layout_constraintStart_toStartOf="@+id/tituloReceta"
-        app:layout_constraintTop_toBottomOf="@+id/tituloReceta" />
+     app:layout_constraintTop_toBottomOf="@+id/imagenReceta" />
 
-    <TextView
-        android:id="@+id/ingredientesReceta"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="74dp"
-        android:text="TextView"
-        android:textColor="@color/flotante"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <TextView
-        android:id="@+id/preparacionReceta"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="41dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="151dp"
-        android:text="TextView"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+ <TextView
+     android:id="@+id/tituloReceta"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="36dp"
+     android:layout_marginTop="16dp"
+     android:layout_marginBottom="11dp"
+     android:isIndicator="true"
+     android:shadowColor="@color/colorAccent"
+     android:text="Prueba2"
+     android:textColor="@color/colorAccent"
+     android:textSize="36sp"
+     app:layout_constraintBottom_toTopOf="@+id/detalleReceta"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="10dp"
-        android:text="Ingredientes:"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/ingredientesReceta"
-        app:layout_constraintStart_toStartOf="@+id/ingredientesReceta"
-        app:layout_constraintTop_toBottomOf="@+id/dificultadReceta" />
+ <TextView
+     android:id="@+id/detalleReceta"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginBottom="13dp"
+     android:isIndicator="true"
+     android:text="prueba"
+     android:textColor="@color/colorPrimary"
+     app:layout_constraintBottom_toTopOf="@+id/imagenReceta"
+     app:layout_constraintStart_toStartOf="@+id/tituloReceta"
+     app:layout_constraintTop_toBottomOf="@+id/tituloReceta" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:text="Preparación"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/preparacionReceta"
-        app:layout_constraintStart_toStartOf="@+id/preparacionReceta"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientesReceta" />
+ <TextView
+     android:id="@+id/ingredientesReceta"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="36dp"
+     android:layout_marginEnd="36dp"
+     android:layout_marginBottom="74dp"
+     android:text="TextView"
+     android:textColor="@color/flotante"
+     app:layout_constraintBottom_toTopOf="@+id/textView5"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+ <TextView
+     android:id="@+id/preparacionReceta"
+     android:layout_width="0dp"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="41dp"
+     android:layout_marginEnd="41dp"
+     android:layout_marginBottom="151dp"
+     android:text="TextView"
+     android:textColor="@color/colorAccent"
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+ <TextView
+     android:id="@+id/textView4"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginStart="1dp"
+     android:layout_marginBottom="10dp"
+     android:text="Ingredientes:"
+     android:textColor="@color/colorPrimary"
+     app:layout_constraintBottom_toTopOf="@+id/ingredientesReceta"
+     app:layout_constraintStart_toStartOf="@+id/ingredientesReceta"
+     app:layout_constraintTop_toBottomOf="@+id/dificultadReceta" />
+
+ <TextView
+     android:id="@+id/textView5"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_marginBottom="12dp"
+     android:text="Preparación"
+     android:textColor="@color/colorPrimary"
+     app:layout_constraintBottom_toTopOf="@+id/preparacionReceta"
+     app:layout_constraintStart_toStartOf="@+id/preparacionReceta"
+     app:layout_constraintTop_toBottomOf="@+id/ingredientesReceta" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
