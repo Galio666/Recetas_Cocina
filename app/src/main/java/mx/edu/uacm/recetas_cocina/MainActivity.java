@@ -77,7 +77,6 @@ public class MainActivity extends AppCompatActivity
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         reference=database.getReference().child("Usuario");
         Query entrada=reference.orderByChild("Categoria").equalTo("Entradas");
-
         Query sopas= reference.orderByChild("Categoria").equalTo("Sopas");
         Query postres= reference.orderByChild("Categoria").equalTo("Postres");
         Query platoFuerte= reference.orderByChild("Categoria").equalTo("Plato Fuerte");

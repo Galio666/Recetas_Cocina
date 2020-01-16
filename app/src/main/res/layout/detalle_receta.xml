@@ -9,18 +9,8 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/TipoReceta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="85dp"
-            android:layout_marginBottom="13dp"
-            android:text="Tipo"
-            android:textColor="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/nombre"
@@ -30,14 +20,15 @@
             android:layout_marginTop="65dp"
             android:layout_marginBottom="16dp"
             android:text="Titulo Receta"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imagenReceta"
@@ -53,7 +44,8 @@
         style="@style/ImageRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="-10dp"
         android:isIndicator="true"
         android:numStars="4" />
 

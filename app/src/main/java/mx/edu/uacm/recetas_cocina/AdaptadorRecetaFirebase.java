@@ -72,7 +72,7 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
     public void onBindViewHolder(@NonNull final ViewHolderRecetas holder, final int position) {
 
         holder.textViewNombreReceta.setText(detallesrecetas.get(position).getNombre());
-        holder.textViewTipoReceta.setText(detallesrecetas.get(position).getCategoria());
+        //holder.textViewTipoReceta.setText(detallesrecetas.get(position).getCategoria());
         get().load(detallesrecetas.get(position).getFoto()).into(holder.imagen);
         holder.imagen.setImageBitmap(dislayImagen(detallesrecetas.get(position).getFoto()));
 
@@ -109,7 +109,7 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
 
 
          TextView textViewNombreReceta;
-         TextView textViewTipoReceta;
+         //TextView textViewTipoReceta;
          ImageView imagen;
          RatingBar dificultad;
          TextView prueba;
@@ -118,7 +118,7 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
         public ViewHolderRecetas(@NonNull final View itemView) {
             super(itemView);
            textViewNombreReceta =(TextView) itemView.findViewById(R.id.nombre);
-           textViewTipoReceta = (TextView) itemView.findViewById(R.id.TipoReceta);
+           //textViewTipoReceta = (TextView) itemView.findViewById(R.id.TipoReceta);
            imagen = (ImageView)itemView.findViewById(R.id.imagenReceta);
            dificultad = (RatingBar)itemView.findViewById(R.id.Dificultad);
 

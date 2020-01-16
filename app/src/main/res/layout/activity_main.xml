@@ -42,12 +42,11 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="17dp"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:layout_marginBottom="12dp"
             android:text="@string/Entradas"
             android:textColor="@color/com_facebook_button_background_color_pressed"
-            android:textSize="16sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/my_recyclerViewEntradas"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,12 +56,12 @@
         <TextView
             android:id="@+id/textViewSopas"
             android:layout_width="wrap_content"
-            android:layout_height="17dp"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/Sopas"
             android:textColor="@color/com_facebook_button_background_color_pressed"
-            android:textSize="16sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -72,12 +71,12 @@
         <TextView
             android:id="@+id/textViewPostres"
             android:layout_width="wrap_content"
-            android:layout_height="17dp"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_marginTop="20dp"
             android:text="@string/Postres"
             android:textColor="@color/com_facebook_button_background_color_pressed"
-            android:textSize="16sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -87,12 +86,12 @@
         <TextView
             android:id="@+id/textViewPlatoFuerte"
             android:layout_width="wrap_content"
-            android:layout_height="17dp"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:layout_marginTop="36dp"
             android:text="@string/PlatoFuerte"
             android:textColor="@color/com_facebook_button_background_color_pressed"
-            android:textSize="16sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -104,7 +103,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="64dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:msrv_gravity="start"
@@ -138,12 +137,13 @@
             app:msrv_snap_count="1"
             tools:layout_editor_absoluteX="0dp" />
 
+
         <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
             android:id="@+id/my_recyclerViewSopas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="28dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/textViewSopas"
             app:msrv_gravity="start"
@@ -151,24 +151,11 @@
             app:msrv_snap_count="1"
             tools:layout_editor_absoluteX="0dp" />
 
-
         <include
             android:id="@+id/toolbar"
             layout="@layout/toolbar"
             android:background="@color/flotante"
             android:backgroundTint="@color/flotante" />
-
-        <!--<androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/my_recyclerViewPostres"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp"
-            android:background="@drawable/fondo1">
-        </androidx.recyclerview.widget.RecyclerView>-->
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
