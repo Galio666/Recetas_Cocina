@@ -31,6 +31,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,6 +54,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
     private Bitmap bitmap;
     String tit = "usuario";
     String bod = "se agrego receta";
+    FirebaseUser user;
 
     private PendingIntent pendingIntent;
     private final static String CHANNEL_ID = "NOTIFICACION";
@@ -68,6 +71,9 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         // inicia en el nodo principal
         mRootReference = FirebaseDatabase.getInstance().getReference();
         //final MyFirebaseMessagingService m1 = new MyFirebaseMessagingService();
+
+        //Para obtener el usuario actual en la aplicacion
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         /***Relacionando variables back con front***/
         btnSubirDatosFirebase = findViewById(R.id.btn_agregar);
@@ -109,6 +115,8 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
                 String ingredientes = etIngredientes.getText().toString();
                 String preparacion = etPreparacion.getText().toString();
                 String foto = getStringImagen(bitmap);
+                String nombreUsuario=user.getDisplayName();
+                String correo=user.getEmail();
 
                 // cargar los valores y guardarlos en firebase
 
@@ -119,6 +127,9 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
                 datosUsuario.put("Ingredientes",ingredientes);
                 datosUsuario.put("Preparacion",preparacion);
                 datosUsuario.put("Foto",foto);
+                //Agregan los datos del usuario
+                datosUsuario.put("Email",correo);
+                datosUsuario.put("Usuario",nombreUsuario);
 
                 mRootReference.child("Usuario").push().setValue(datosUsuario); /*verificar si guarda los datos como oauth*/
 
