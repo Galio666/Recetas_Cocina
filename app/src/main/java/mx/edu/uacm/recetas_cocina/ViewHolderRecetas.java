@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ViewHolderRecetas extends RecyclerView.ViewHolder {
     private TextView textViewNombreReceta;
-    private TextView textViewTipoReceta;
+    //private TextView textViewTipoReceta;
     private ImageView imagen;
     private RatingBar dificultad;
 
     ViewHolderRecetas(@NonNull View itemView) {
         super(itemView);
         textViewNombreReceta = itemView.findViewById(R.id.nombre);
-        textViewTipoReceta = itemView.findViewById(R.id.TipoReceta);
+        //textViewTipoReceta = itemView.findViewById(R.id.TipoReceta);
         imagen=itemView.findViewById(R.id.imagenReceta);
         dificultad=itemView.findViewById(R.id.Dificultad);
     }
@@ -31,13 +31,13 @@ public class ViewHolderRecetas extends RecyclerView.ViewHolder {
         this.textViewNombreReceta = textViewNombreReceta;
     }
 
-    public TextView getTextViewTipoReceta() {
+    /* public TextView getTextViewTipoReceta() {
         return textViewTipoReceta;
     }
 
-    public void setTextViewTipoReceta(TextView textViewTipoReceta) {
+   public void setTextViewTipoReceta(TextView textViewTipoReceta) {
         this.textViewTipoReceta = textViewTipoReceta;
-    }
+    }*/
 
     public ImageView getImagen() {
         return imagen;

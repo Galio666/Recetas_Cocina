@@ -6,11 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -38,7 +36,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
 
 
 public class MainActivity extends AppCompatActivity
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
     TextView usuario;
     private FirebaseUser user;
     TextView header;
-    RecyclerView recycler;
+    MultiSnapRecyclerView recycler,recyclerPostres,recyclerPlatof,recyclerSopas;
     AdaptadorRecetaFirebase adaptadorRecetaFirebase;
     DatabaseReference reference;
     ArrayList<Receta_Detalles> list;
@@ -62,17 +62,116 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recycler=(RecyclerView) findViewById(R.id.my_recyclerView);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
+        recycler=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewEntradas);
+        recyclerSopas=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewSopas);
+        recyclerPostres=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewPostres);
+        recyclerPlatof=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewPlatoFuerte);
+
+
+        recycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerSopas.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerPostres.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+        recyclerPlatof.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         reference=database.getReference().child("Usuario");
+        Query entrada= reference.orderByChild("Categoria").equalTo("Entradas");
+        Query sopas= reference.orderByChild("Categoria").equalTo("Sopas");
+        Query postres= reference.orderByChild("Categoria").equalTo("Postres");
+        Query platoFuerte= reference.orderByChild("Categoria").equalTo("Plato Fuerte");
+
+        entrada.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list=new ArrayList<>();
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    Receta_Detalles d =dataSnapshot1.getValue(Receta_Detalles.class);
+                    list.add(d);
+                }
+                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
+                recycler.setAdapter(adaptadorRecetaFirebase);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        sopas.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list=new ArrayList<>();
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    Receta_Detalles d =dataSnapshot1.getValue(Receta_Detalles.class);
+                    list.add(d);
+                }
+                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
+                recyclerSopas.setAdapter(adaptadorRecetaFirebase);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        postres.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list=new ArrayList<>();
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    Receta_Detalles d =dataSnapshot1.getValue(Receta_Detalles.class);
+                    list.add(d);
+                }
+                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
+                recyclerPostres.setAdapter(adaptadorRecetaFirebase);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        platoFuerte.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list=new ArrayList<>();
+                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    Receta_Detalles d =dataSnapshot1.getValue(Receta_Detalles.class);
+                    list.add(d);
+                }
+                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
+                recyclerPlatof.setAdapter(adaptadorRecetaFirebase);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
 
         //reference=FirebaseDatabase.getInstance().getReference().child("Usuario");
 
 
 
-       reference.addValueEventListener(new ValueEventListener() {
+       /*reference.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                list=new ArrayList<>();
@@ -81,12 +180,6 @@ public class MainActivity extends AppCompatActivity
                    list.add(d);
                }
                adaptadorRecetaFirebase=new AdaptadorRecetaFirebase(MainActivity.this,list);
-
-
-
-
-
-
                recycler.setAdapter(adaptadorRecetaFirebase);
            }
 
@@ -95,7 +188,7 @@ public class MainActivity extends AppCompatActivity
                Toast.makeText(MainActivity.this, "Algo salio mal", Toast.LENGTH_SHORT).show();
            }
        });
-
+*/
 
         setToolBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

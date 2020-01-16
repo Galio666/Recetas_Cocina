@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:weightSum="2"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+
+    android:orientation="vertical"
+    android:weightSum="2">
 
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/TipoReceta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="13dp"
-            android:text="Tipo"
-            />
 
         <TextView
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_marginTop="55dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="16dp"
-            android:text="Titulo Receta" />
+            android:fontFamily="cursive"
+            android:text="Titulo Receta"
+            android:textColor="@color/colorAccent"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
-<de.hdodenhof.circleimageview.CircleImageView
-    android:id="@+id/imagenReceta"
-    android:layout_width="190dp"
-    android:layout_height="190dp"
-    android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imagenReceta"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="16dp" />
 
     </LinearLayout>
 
     <RatingBar
         android:id="@+id/Dificultad"
+        style="@style/ImageRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="-10dp"
         android:isIndicator="true"
-        style="@style/ImageRatingBar"
-        android:numStars="4"/>
+        android:numStars="4" />
 
 </LinearLayout>
