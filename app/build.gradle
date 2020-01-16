@@ -48,4 +48,7 @@ dependencies {
 
     implementation 'com.android.support:recyclerview-v7:27.1.0'
     implementation 'com.github.takusemba:multisnaprecyclerview:1.3.3'
+
+
+
 }

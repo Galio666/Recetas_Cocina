@@ -104,8 +104,8 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
 
-                createNotificationChannel();
-                createNotification();
+                //createNotificationChannel();
+                //createNotification();
 
                 //m1.showNotification(tit,bod);
 
@@ -204,7 +204,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         return encodedImage;
 
     }
-
+/*
     private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "Noticacion";
@@ -225,9 +225,12 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
         builder.setDefaults(Notification.DEFAULT_SOUND);
 
+
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
         notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
     }
+*/
+
 
 
 }
