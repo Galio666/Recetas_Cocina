@@ -10,6 +10,7 @@ public class Receta_Detalles {
     private int Calificacion;
     private  String Ingredientes;
     private  String Preparacion;
+    private String Usuario;
 
     public Receta_Detalles() {
     }
@@ -70,5 +71,14 @@ public class Receta_Detalles {
 
     public void setPreparacion(String preparacion) {
         Preparacion = preparacion;
+    }
+
+
+    public String getUsuario() {
+        return Usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        Usuario = usuario;
     }
 }
