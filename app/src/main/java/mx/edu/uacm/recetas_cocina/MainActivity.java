@@ -12,8 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,11 +59,31 @@ public class MainActivity extends AppCompatActivity
     AdaptadorRecetaFirebase adaptadorRecetaFirebase;
     DatabaseReference reference;
     ArrayList<Receta_Detalles> list;
+    EditText busqueda ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        busqueda = findViewById(R.id.busqueda);
+        busqueda.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+              filter(s.toString());
+            }
+        });
+
 
         recycler=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewEntradas);
         recyclerSopas=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewSopas);
@@ -212,6 +235,17 @@ public class MainActivity extends AppCompatActivity
         //Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         //setSupportActionBar(myToolbar);
 
+    }
+
+
+    public void filter(String text){
+       ArrayList<Receta_Detalles> filteredList = new ArrayList<>();
+       for (Receta_Detalles item : list){
+           if (item.getNombre().toLowerCase().contains(text.toLowerCase())){
+               filteredList.add(item);
+           }
+       }
+        adaptadorRecetaFirebase.filterList(filteredList);
     }
 
 

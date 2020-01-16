@@ -103,6 +103,11 @@ public class AdaptadorRecetaFirebase extends RecyclerView.Adapter <AdaptadorRece
         return detallesrecetas.size();
     }
 
+    public void filterList(ArrayList<Receta_Detalles> filteredList){
+        detallesrecetas = filteredList;
+        notifyDataSetChanged();
+    }
+
 
 
     public class ViewHolderRecetas extends RecyclerView.ViewHolder {

@@ -10,6 +10,9 @@
         android:layout_height="200dp"
         android:background="@color/colorAccent"
         android:scaleType="centerCrop" />
+
+
+
     <TextView
         android:id="@+id/UsuarioNombre"
         android:layout_width="wrap_content"
