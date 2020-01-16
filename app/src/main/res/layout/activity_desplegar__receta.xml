@@ -18,6 +18,7 @@
 
 
 
+
         <ImageView
             android:id="@+id/imagenReceta"
             android:layout_width="wrap_content"
@@ -123,6 +124,7 @@
             app:layout_constraintHorizontal_bias="0.104"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ingredientesReceta" />
+
 
 
 

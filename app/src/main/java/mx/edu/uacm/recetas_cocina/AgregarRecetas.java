@@ -2,11 +2,19 @@ package mx.edu.uacm.recetas_cocina;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -42,6 +50,12 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
     ImageView imagen;
     static final int GALLERI_INTENT = 1;
     private Bitmap bitmap;
+    String tit = "usuario";
+    String bod = "se agrego receta";
+
+    private PendingIntent pendingIntent;
+    private final static String CHANNEL_ID = "NOTIFICACION";
+    private final static int NOTIFICACION_ID = 0;
 
 
 
@@ -53,6 +67,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
         // inicia en el nodo principal
         mRootReference = FirebaseDatabase.getInstance().getReference();
+        //final MyFirebaseMessagingService m1 = new MyFirebaseMessagingService();
 
         /***Relacionando variables back con front***/
         btnSubirDatosFirebase = findViewById(R.id.btn_agregar);
@@ -65,14 +80,15 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         imagen = (ImageView)findViewById(R.id.imagenRec);
         galeria=(Button)findViewById(R.id.bt_galeria);
 
-      /***Boton de la galeria***/
+        /***Boton de la galeria***/
 
-      galeria.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              cargarImagen();
-          }
-      });
+        galeria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cargarImagen();
+
+            }
+        });
 
 
 
@@ -81,6 +97,12 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         btnSubirDatosFirebase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                createNotificationChannel();
+                createNotification();
+
+                //m1.showNotification(tit,bod);
+
                 String nombre = etNombre.getText().toString();
                 String categoria = varSpin.getText().toString();
                 Float calificacion = ratingBar.getRating();
@@ -108,7 +130,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
         //logica del menu de categoria
         Spinner spinner = findViewById(R.id.menuCat);
-                                                                                                   /*desde aqui mando a llamr el xml de las categorias o se podria desde el layout**/
+        /*desde aqui mando a llamr el xml de las categorias o se podria desde el layout**/
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.categorias,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -117,7 +139,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-       /*****Mostramos la notificacion de lo que elegimos pero en este caso no es necesario*****/
+        /*****Mostramos la notificacion de lo que elegimos pero en este caso no es necesario*****/
         //String text = parent.getItemAtPosition(position).toString();
         //Toast.makeText(parent.getContext(), text, Toast.LENGTH_LONG).show();
 
@@ -163,10 +185,38 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
     public String getStringImagen(Bitmap bmp){
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
         bmp.compress(Bitmap.CompressFormat.JPEG, 30, baos);
+
         byte[] imageBytes = baos.toByteArray();
         String encodedImage =  Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
 
     }
+
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "Noticacion";
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, name, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+    }
+
+    private void createNotification(){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
+        builder.setSmallIcon(R.drawable.ic_stat_ic_notification);
+        builder.setContentTitle("Notificacion Android");
+        builder.setContentText("Apuntate a mis Cursos de Udemy");
+        builder.setColor(Color.BLUE);
+        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        builder.setLights(Color.MAGENTA, 1000, 1000);
+        builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
+        builder.setDefaults(Notification.DEFAULT_SOUND);
+
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
+        notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
+    }
+
+
 }
