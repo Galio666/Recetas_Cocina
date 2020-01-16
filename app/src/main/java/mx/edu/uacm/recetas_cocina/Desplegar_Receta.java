@@ -40,6 +40,7 @@ public class Desplegar_Receta extends AppCompatActivity  {
     TextView tipo;
     TextView ingredientes;
     TextView preparacion;
+    TextView nomUsuario;
     RatingBar dificultad;
     ImageView imagen;
 
@@ -63,7 +64,7 @@ public class Desplegar_Receta extends AppCompatActivity  {
        //titulo.setText(prueba);
 
 
-        prueba = getIntent().getExtras().get("Nombre").toString();
+        //prueba = getIntent().getExtras().get("Nombre").toString();
 
 
 
@@ -75,6 +76,7 @@ public class Desplegar_Receta extends AppCompatActivity  {
         preparacion=findViewById(R.id.preparacionReceta);
         dificultad=findViewById(R.id.dificultadReceta);
         imagen=findViewById(R.id.imagenReceta);
+        nomUsuario=findViewById(R.id.nomUsuario);
 
         //Intent intent = getIntent();
         String nombre=getIntent().getStringExtra("Nombre");
@@ -83,9 +85,11 @@ public class Desplegar_Receta extends AppCompatActivity  {
         String preparacion1=getIntent().getStringExtra("Preparacion");
         int dificultad1=getIntent().getIntExtra("Calificacion",0);
         String urlImagen=getIntent().getStringExtra("Foto");
+        String nomUsuario1=getIntent().getStringExtra("Usuario");
 
        // System.out.println("Nuemero de estrellas es "+dificultad1);
         //System.out.println("Ingredientes"+ingredientes1);
+        System.out.println("Usuario...."+nomUsuario1);
 
         titulo.setText(nombre);
         tipo.setText(tipo1);
@@ -93,6 +97,9 @@ public class Desplegar_Receta extends AppCompatActivity  {
         preparacion.setText(preparacion1);
         dificultad.setNumStars(dificultad1);
         imagen.setImageBitmap(dislayImagen(urlImagen));
+        nomUsuario.setText(nomUsuario1);
+
+
 
        // titulo.setText(intent.getStringExtra("titulo"));
 
