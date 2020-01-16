@@ -99,13 +99,14 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
 
 
 
+
         /****Evento al pulsar el boton*****/
         btnSubirDatosFirebase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //createNotificationChannel();
-                //createNotification();
+                createNotificationChannel();
+                createNotification();
 
                 //m1.showNotification(tit,bod);
 
@@ -204,7 +205,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         return encodedImage;
 
     }
-/*
+
     private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence name = "Noticacion";
@@ -217,8 +218,8 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
     private void createNotification(){
         NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_stat_ic_notification);
-        builder.setContentTitle("Notificacion Android");
-        builder.setContentText("Apuntate a mis Cursos de Udemy");
+        builder.setContentTitle("Agrego Receta");
+        builder.setContentText("El usuario "+user.getDisplayName()+"grego una receta");
         builder.setColor(Color.BLUE);
         builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
         builder.setLights(Color.MAGENTA, 1000, 1000);
@@ -229,7 +230,7 @@ public class AgregarRecetas extends AppCompatActivity implements AdapterView.OnI
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getApplicationContext());
         notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
     }
-*/
+
 
 
 

@@ -59,15 +59,15 @@ public class MainActivity extends AppCompatActivity
     AdaptadorRecetaFirebase adaptadorRecetaFirebase;
     DatabaseReference reference;
     ArrayList<Receta_Detalles> list;
-    EditText busqueda ;
+    //EditText busqueda ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        busqueda = findViewById(R.id.busqueda);
-        busqueda.addTextChangedListener(new TextWatcher() {
+       /*busqueda = findViewById(R.id.busqueda);
+       busqueda.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity
             public void afterTextChanged(Editable s) {
               filter(s.toString());
             }
-        });
+        });*/
 
 
         recycler=(MultiSnapRecyclerView) findViewById(R.id.my_recyclerViewEntradas);
