@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
 
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         reference=database.getReference().child("Usuario");
-        Query entrada=reference.orderByChild("Categoria").equalTo("Entradas");
+        Query entrada= reference.orderByChild("Categoria").equalTo("Entradas");
         Query sopas= reference.orderByChild("Categoria").equalTo("Sopas");
         Query postres= reference.orderByChild("Categoria").equalTo("Postres");
         Query platoFuerte= reference.orderByChild("Categoria").equalTo("Plato Fuerte");
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-       reference.addValueEventListener(new ValueEventListener() {
+       /*reference.addValueEventListener(new ValueEventListener() {
            @Override
            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                list=new ArrayList<>();
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity
                Toast.makeText(MainActivity.this, "Algo salio mal", Toast.LENGTH_SHORT).show();
            }
        });
-
+*/
 
         setToolBar();
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

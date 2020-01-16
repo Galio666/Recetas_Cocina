@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/borde3"
+
     android:orientation="vertical"
     android:weightSum="2">
 
@@ -17,11 +17,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="15dp"
             android:layout_marginBottom="16dp"
+            android:fontFamily="cursive"
             android:text="Titulo Receta"
             android:textColor="@color/colorAccent"
-            android:textSize="24sp" />
+            android:textSize="30sp" />
 
     </LinearLayout>
 
